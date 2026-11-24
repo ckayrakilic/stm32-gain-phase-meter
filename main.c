@@ -64,6 +64,8 @@ int main() {
 		movcursor(0, 0);
 		if (pkx < 100 || pky < 20) { //to avoid division by zero and noise
 			print_str("No signal       ");
+			movcursor(0, 1);
+			print_str("                ");
 		} 
 		else {
 			float gain = (float)pky / (float)pkx;
@@ -78,6 +80,7 @@ int main() {
 				print_str("G:"); 
 				print_sdecimal(gain_db10); 
 				print_str("dB");
+				print_str("   ");
 				
 				movcursor(0,1);
 				print_str("P:"); 
@@ -87,6 +90,8 @@ int main() {
 			
 			else {
 				print_str("No cycles       ");
+				movcursor(0, 1);
+				print_str("                ");
 			}
 		}
 		for (int k = 0; k < 6; k++) {
